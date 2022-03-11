@@ -6,7 +6,7 @@
 /**
  * main - get random number and lable it  with it's sign
  *
- * Return 0
+ * Return: 0
  */
 int main(void)
 {
