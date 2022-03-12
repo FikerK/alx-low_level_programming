@@ -26,11 +26,11 @@ int main(void)
 						putchar(' ');
 						putchar(c + '0');
 						putchar(d + '0');
-						if (e != 98)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					}
+					if (e < f && e != 98)
+					{
+						putchar(',');
+						putchar(' ');
 					}
 				}
 			}
