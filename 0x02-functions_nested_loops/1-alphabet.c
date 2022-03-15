@@ -1,11 +1,11 @@
 #include "main.h"
 
 /*
- * print_alphabet() - prints the alphabet in small letters
+ * print_alphabet - prints the alphabet in small letters
+ * @c: _putchar characters
+ * calls _putchar for displaying each character at a time
  *
- * uses _putchar
  */
-/*print_alphabet*/
 void print_alphabet(void)
 {
 	char alph;
