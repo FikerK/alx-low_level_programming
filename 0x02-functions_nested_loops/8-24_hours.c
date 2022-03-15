@@ -12,7 +12,7 @@ void jack_bauer(void)
 	for (a = 0; a <= 2; a++)
 	{
 		/*if condition for 24 hours end*/
-		if (a == 2 && b == 3)
+		if (a == 2 || b == 3)
 		{
 			a = 3;
 			b = 10;
