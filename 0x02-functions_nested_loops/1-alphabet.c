@@ -1,15 +1,15 @@
 #include "main.h"
 
-/**
- * main - prints the alphabet
+/*
+ * print_alphabet() - prints the alphabet in small letters
  *
- * Return: 0
+ * uses _putchar
  */
+/*print_alphabet*/
 void print_alphabet(void)
 {
 	char alph;
-	
-	/*this will print a to z*/
+
 	for (alph = 'a'; alph <= 'z'; alph++)
 	{
 		_putchar(alph);
