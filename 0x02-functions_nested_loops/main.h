@@ -4,3 +4,5 @@ int _putchar(char);
 void print_alphabet(void);
 /*print_alphabet_x10 - prints a to z ten times*/
 void print_alphabet_x10(void);
+/*_islower - checks if an alphabet is in lower case or not*/
+int _islower(int c);

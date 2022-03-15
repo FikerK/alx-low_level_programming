@@ -2,9 +2,8 @@
 
 /*
  * print_alphabet - prints the alphabet in small letters
- * @c: _putchar characters
- * calls _putchar for displaying each character at a time
  *
+ * calls _putchar for displaying each character at a time
  */
 void print_alphabet(void)
 {
