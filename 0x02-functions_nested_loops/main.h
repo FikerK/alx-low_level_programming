@@ -8,3 +8,5 @@ void print_alphabet_x10(void);
 int _islower(int c);
 /*_isalpha - checks if character is alphabet or not*/
 int _isalpha(int c);
+/*print_sign - prints sign of numbers*/
+int print_sign(int n);
