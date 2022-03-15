@@ -30,7 +30,7 @@ void jack_bauer(void)
 				b = 11;
 			}
 		}
-		if (a ==2 && b == 3 && c == 6)
+		if (a == 2 && b == 3 && c == 6)
 		{
 			a = 3;
 		}
