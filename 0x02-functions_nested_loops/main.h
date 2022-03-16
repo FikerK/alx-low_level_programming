@@ -16,3 +16,5 @@ int _abs(int n);
 int print_last_digit(int);
 /*Prints every minute of the day of Jack Bauer :)*/
 void jack_bauer(void);
+/*times_table - prints the nine times table*/
+void times_table(void);
