@@ -20,3 +20,5 @@ void jack_bauer(void);
 void times_table(void);
 /*add - adds two nums*/
 int add (int, int);
+/*print_to_98 - prints all natural numbers*/
+void print_to_98(int n);
