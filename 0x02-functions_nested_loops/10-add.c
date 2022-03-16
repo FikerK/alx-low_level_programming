@@ -17,16 +17,16 @@ int add(int i, int j)
 	* a = k / 10;
 	* while (a >= 10)
 	* {
-	* 	p++;
-	* 	a = a / 10;
+	*	p++;
+	*	a = a / 10;
 	* }
 	* for (m = p; m >= 0; m--)
 	*{
-	* 	q = m;
+	*	q = m;
 	*	while (q > 0)
-	* 	{
+	*	{
 	*		n = 10 * n;
-	* 	q--;
+	*	q--;
 	*	}
 	*	l = k / n;
 	*	_putchar(l + '0');
