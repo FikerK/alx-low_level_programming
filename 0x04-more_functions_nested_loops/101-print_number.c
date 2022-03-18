@@ -7,21 +7,22 @@
 
 void print_number(int n)
 {
-	int a = 1, b, c = 1, m;
+	int a = 1, b, c = 1, m, o;
 
-	if (n < 0)
+	o = n;
+	if (o < 0)
 	{
-		n = -1 * n;
+		o = -1 * o;
 		_putchar('-');
 	}
-	m = n;
+	m = o;
 	while (m >= 10)
 	{
 		m = m / 10;
 		a++;
 		c = 10 * c;
 	}
-	m = n;
+	m = o;
 	for (b = a; b > 0; b--)
 	{
 		_putchar((m / c) + '0');
