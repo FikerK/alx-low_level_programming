@@ -7,11 +7,24 @@
 
 int main(void)
 {
-	long int a, b = 0, i, j = 0, m = 0;
-	long int n = 612852475143, pn = 0;
+	long int a, b = 0, i, j = 0, k, m = 0;
+	long int n = 612852475143, pn;
 
 	m = n;
-	for (a = 2; a <= (m / 2); a++)
+	/*check if n is prime*/
+	for (k = 2; k <= n / 2; k++)
+	{
+		if (n % k == 0)
+		{
+			pn = 0;
+		}
+		else
+		{
+			pn = n;
+			a = n + 1;
+		}
+	}
+	for (a = 2; a <= m; a++)
 	{
 		if (m % a == 0)
 		{
