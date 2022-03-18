@@ -28,10 +28,6 @@ void more_numbers(void)
 					_putchar(d + '0');
 				}
 				_putchar(e + '0');
-				if (d == 1 && e == 0)
-				{
-					e = 1;
-				}
 				if (d == 1 && e == 4)
 				{
 					e = 11;
