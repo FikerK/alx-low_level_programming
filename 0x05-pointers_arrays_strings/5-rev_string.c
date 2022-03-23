@@ -18,9 +18,9 @@ void rev_string(char *s)
 	a = a - 1;
 	while (a != b && a - 1 != b)
 	{
-		r = *(s + b);
-		*(s + b) = *(s + a);
-		*(s + a) = r;
+		r = *(s + a);
+		*(s + a) = *(s + b);
+		*(s + b) = r;
 		a--;
 		b++;
 	}
