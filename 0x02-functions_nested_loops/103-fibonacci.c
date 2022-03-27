@@ -7,14 +7,13 @@
 
 int main(void)
 {
-	int i, fn;
+	int i, fn = 0;
 	long sum = 0;
 
 	for (i = 1; i <= 4000000; i++)
 	{
 		fn += i;
 		i += fn;
-		printf("%d ", i);
 		if (fn % 2 == 0)
 			sum += fn;
 		if (i % 2 == 0)
