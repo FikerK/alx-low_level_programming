@@ -7,19 +7,16 @@
 
 int main(void)
 {
-	int i, fn = 0;
+	int i;
+	long fn = 0, n = 1;
 
-	for (i = 1; i < 50; i++)
+	for (i = 0; i < 25; i++)
 	{
-		fn += i;
-		i += fn;
-		if (fn < 50)
-			printf("%d", fn);
-		if (i < 50)
-			printf(", %d", i);
-		if (fn + i < 50)
+		fn += n;
+		n += fn;
+		printf("%ld, %ld", fn, n);
+		if (i < 24)
 			printf(", ");
-		i = i - 1;
 	}
 	printf("\n");
 	return (0);
