@@ -8,7 +8,7 @@
  */
 void print_times_table(int n)
 {
-	int i, j, mult = 0;
+	int i, j, mult = 0, s, p, a = 1, c = 1;
 
 	if (n <= 15 && n >= 0)
 	{
@@ -17,30 +17,22 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				mult = i * j;
-				if (j == 0)
+				while (mult >= 10)
 				{
-					_putchar(0 + '0');
+					mult /= 10;
+					a++;
+					c *= 10;
 				}
-				if (mult < 10 && j != 0)
+				mult = i * j;
+				for (s = a; s < 4 && j != 0; s++)
 				{
 					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(mult + '0');
 				}
-				if (mult >= 10 && mult < 100)
+				for (p = a; p > 0; p--)
 				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((mult / 10) + '0');
-					_putchar((mult % 10) + '0');
-				}
-				if (mult >= 100)
-				{
-					_putchar(' ');
-					_putchar((mult / 100) + '0');
-					_putchar(((mult % 100) / 10) + '0');
-					_putchar(((mult % 100) % 10) + '0');
+					_putchar((mult / c) + '0');
+					mult = mult % c;
+					c /= 10;
 				}
 				if (j < n)
 				{
@@ -50,6 +42,8 @@ void print_times_table(int n)
 				{
 					_putchar('\n');
 				}
+				c = 1;
+				a = 1;
 			}
 		}
 	}
