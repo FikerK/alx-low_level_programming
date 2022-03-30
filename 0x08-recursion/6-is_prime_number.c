@@ -18,8 +18,8 @@ int is_prime(int n, int i)
 	else if (n % i != 0)
 		is_prime(n, i - 1);
 	else if (i == 1)
-		return(1);
-	return (0);
+		return (1);
+	return (1);
 }
 
 /**
