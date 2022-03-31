@@ -10,9 +10,7 @@
 
 int _sqrt(int n, int i, int j)
 {
-	if (n < 0)
-		n = -1 * n;
-	if (i == 0)
+	if (i == 0 || n < 0)
 		return (-1);
 	if (i * j == n)
 		return (i);
