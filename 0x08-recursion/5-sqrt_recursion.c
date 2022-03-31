@@ -10,23 +10,17 @@
 
 int _sqrt(int n, int i, int j)
 {
-	int a = 0;
-
 	if (n < 0)
 		n = -1 * n;
 	if (i == 0)
-	{
-		a = -1;
 		return (-1);
-	}
 	if (i * j == n)
-	{
-		a = i;
 		return (i);
-	}
 	else
+	{
 		_sqrt(n , i - 1, j - 1);
-	/*return (a);*/
+		return (0);
+	}
 }
 
 /**
