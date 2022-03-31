@@ -13,13 +13,12 @@ int is_prime(int n, int i)
 		n = -1 * n;
 	if (n == 1)
 		return (0);
+	if (i == 1)
+		return (1);
 	if (n % i == 0)
 		return (0);
-	else if (n % i != 0)
-		is_prime(n, i - 1);
-	else if (i == 1)
-		return (1);
-	return (1);
+	else
+		return (is_prime(n, i - 1));
 }
 
 /**
