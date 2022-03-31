@@ -16,7 +16,7 @@ int _sqrt(int n, int i, int j)
 		return (-1);
 	if (i * j == n)
 		return (i);
-	_sqrt(n, i - 1, j - 1);
+	return (_sqrt(n, i - 1, j - 1));
 }
 
 /**
