@@ -18,7 +18,7 @@ int main(void)
 {
 	int r;
 
-	r = is_palindrome("test");
+	r = is_palindrome("abcddcba");
 	printf("%d\n", r);
 	return (0);
 }
