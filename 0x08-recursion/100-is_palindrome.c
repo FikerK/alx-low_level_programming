@@ -9,10 +9,9 @@
 
 int get_length(char *s, int i)
 {
-	if (*(s + i) != '\0')
-		get_length(s, i + 1);
-	else
+	if (*(s + i) == '\0')
 		return (i);
+	return (get_length(s, i + 1));
 }
 
 /**
@@ -29,7 +28,7 @@ int _palindrome(char *s, int i, int j)
 		return (1);
 	if (*(s + i) == *(s + j))
 	{
-		_palindrome(s, i - 1, j + 1);
+		return (_palindrome(s, i - 1, j + 1));
 	}
 	else
 		return (0);

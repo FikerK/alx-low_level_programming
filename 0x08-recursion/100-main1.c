@@ -18,7 +18,7 @@ int main(void)
 {
 	int r;
 
-	r = is_palindrome("level");
+	r = is_palindrome("test");
 	printf("%d\n", r);
 	return (0);
 }
