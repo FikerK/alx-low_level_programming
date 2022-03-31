@@ -24,7 +24,7 @@ int get_length(char *s, int i)
 
 int _palindrome(char *s, int i, int j)
 {
-	if (i == j || i == j + 1)
+	if (i == j || i == j - 1)
 		return (1);
 	if (*(s + i) == *(s + j))
 	{
