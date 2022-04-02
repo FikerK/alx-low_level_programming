@@ -1,55 +1,39 @@
 #include <stdio.h>
 
 /**
+ * isprime - checks if a number is prime
+ * @n: number to be scrutinized
+ * Return: 1 if prime, 0 if not.
+ */
+
+int isprime(long int n)
+{
+	long int i;
+
+	if (n == 0 || n == 1)
+		return (0);
+	for (i = 2; i <= n / 2; i++)
+	{
+		if (n % i == 0)
+			return (0);
+	}
+	return (1);
+}
+
+/**
  * main - prints the largest prime factor of the number 612852475143
  * Return: 0
  */
 
 int main(void)
 {
-	long int a, b = 0, i, j = 0, k, m = 0;
-	long int n = 612852475143, pn;
+	long int i, n = 612852475143, pf = 0;
 
-	m = n;
-	/*check if n is prime*/
-	for (k = 2; k <= n / 2; k++)
+	for (i = 2; i <= n / 2; i++)
 	{
-		if (n % k == 0)
-		{
-			pn = 0;
-		}
-		else
-		{
-			pn = n;
-			a = n + 1;
-		}
+		if (isprime(i) && n % i == 0 && pf < i)
+			pf = i;
 	}
-	for (a = 2; a <= m; a++)
-	{
-		if (m % a == 0)
-		{
-			for (i = 2; i <= (a / 2); i++)
-			{
-				if (a % i == 0)
-				{
-					i = a;
-					j = 1;
-				}
-				else
-					j = 0;
-			}
-			if (j == 0)
-			{
-				b = a;
-				m = m / a;
-				a = 2;
-			}
-			if (pn < b)
-			{
-				pn = b;
-			}
-		}
-	}
-	printf("%ld\n", pn);
+	printf("%ld\n", pf);
 	return (0);
 }
