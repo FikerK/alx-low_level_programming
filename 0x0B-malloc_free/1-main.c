@@ -24,7 +24,7 @@ int main(void)
 
 
 
-	        s = _strdup("Holberton");
+	        s = _strdup("Hol bert on");
 
 		    if (s == NULL)
 
