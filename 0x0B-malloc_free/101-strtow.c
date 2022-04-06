@@ -3,28 +3,66 @@
 #include <stdio.h>
 
 /**
- * sized - gives the unwhite spaced size of string
+ * sizedr - gives the unwhite spaced size of string
  * @str: string to be sized
  * Return: size of str
  */
 
-int sized(char *str)
+int sizedr(char *str)
 {
-	int i = 0, j = 0, f;
+	int i = 0, j = 0, s = 0, f;
 
 	while (str[i])
+		i++;
+	for (j = 0; j < i; j++)
 	{
 		f = 0;
-		while (str[i] == ' ')
+		if (str[0] != ' ')
+			s = 1;
+		j++;
+		while (str[j] != ' ')
 		{
-			i++;
+			j++;
 			f = 1;
 		}
-		j++;
-		if (f == 0)
-			i++;
+		if (f == 1)
+			s++;
 	}
-	return (j);
+	return (s);
+}
+
+/**
+ * initloco - initialize splited string
+ * @str: unsplited string
+ * @p: splited string pointer
+ * @i: str length
+ * Return: pointer to the splited array of words
+ */
+
+char **initloco(char *str, char **p, int i)
+{
+	int a, j = 0, k = 0, f;
+
+	for (a = 0; a < i; )
+	{
+		f = 0;
+		while (str[a] != ' ')
+		{
+			p[j][k] = str[a];
+			k++;
+			a++;
+			f = 1;
+		}
+		if (f == 1)
+		{
+			p[j][k] = '\0';
+			k = 0;
+			j++;
+		}
+		if (f == 0)
+			a++;
+	}
+	return (p);
 }
 /**
  * strtow - splits a string into words
@@ -35,31 +73,44 @@ int sized(char *str)
 char **strtow(char *str)
 {
 	char **p;
-	int i = 0, j = 0, k = 0;
+	int i = 0, j = 0, f = 0, g, a, k = 0, s = 0;
 
 	if (str == NULL)
 		return (0);
-	p = malloc(sizeof(char) * sized(str));
+	while (str[i])
+		i++;
+	s = sizedr(str);
+
+	p = malloc(sizeof(char *) * s);
 	if (p == 0)
 		return (0);
-	while (str[i])
+	for (g = 0; g < i; g++)
 	{
-		if (str[i] == ' ')
-			i++;
-		else
+		for (f = 0; f < s; )
 		{
-			while(str[i] != ' ')
+			a = 0;
+			while(str[g] != ' ')
 			{
-				printf("s %d\n", sized(str));
-				p[j][k] = str[i];
-				i++;
-				printf("s %d\n", sized(str));
-				k++;
+				g++;
+				j++;
+				a = 1;
 			}
-			p[j][k] = '\0';
-			k++;
+			if (a == 1)
+			{
+				p[f] = malloc(sizeof(char) * (j + 1));
+				if (p[f] == NULL)
+				{
+					for (f = 0; f < s; f++)
+						free(p[k]);
+					free(p);
+					return (0);
+				}
+				j = 0;
+				f++;
+			}
+			g++;
 		}
-		j++;
 	}
+	p = initloco(str, p, i);
 	return (p);
 }
