@@ -17,9 +17,6 @@ int sizedr(char *str)
 	for (j = 0; j < i; j++)
 	{
 		f = 0;
-		if (str[0] != ' ')
-			s = 1;
-		j++;
 		while (str[j] != ' ')
 		{
 			j++;
@@ -73,14 +70,14 @@ char **initloco(char *str, char **p, int i)
 char **strtow(char *str)
 {
 	char **p;
-	int i = 0, j = 0, f = 0, g, a, k = 0, s = 0;
+	int i = 0, j = 0, f = 0, g, a, s = 0;
 
 	if (str == NULL)
 		return (0);
 	while (str[i])
 		i++;
 	s = sizedr(str);
-
+	printf("sRaaw %d\n", s);
 	p = malloc(sizeof(char *) * s);
 	if (p == 0)
 		return (0);
@@ -99,12 +96,7 @@ char **strtow(char *str)
 			{
 				p[f] = malloc(sizeof(char) * (j + 1));
 				if (p[f] == NULL)
-				{
-					for (f = 0; f < s; f++)
-						free(p[k]);
-					free(p);
 					return (0);
-				}
 				j = 0;
 				f++;
 			}
