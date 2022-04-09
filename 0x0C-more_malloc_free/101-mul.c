@@ -32,7 +32,7 @@ int _is_digit(char **n)
  * Return: nothing
  */
 
-int mul(char *n1, char *n2, int s1, int s2, int s)
+int *mul(char *n1, char *n2, int s1, int s2, int s)
 {
 	int *mult;
 	int i, n, m, x, y, r = 0, r1 = 0, ms, sm = 0, a = 0;
@@ -43,7 +43,7 @@ int mul(char *n1, char *n2, int s1, int s2, int s)
 		return (0);
 	for (i = 0; i < s; i++)
 		mult[i] = 0;
-	for(n = s2 - 1; n >= 0; n--)
+	for (n = s2 - 1; n >= 0; n--)
 	{
 		for (m = s1 - 1; m >= 0; m--)
 		{
@@ -70,10 +70,7 @@ int mul(char *n1, char *n2, int s1, int s2, int s)
 		sm++;
 		ms = s - sm;
 	}
-	for (i = 0; i < s; i++)
-		_putchar(mult[i] + '0');
-	_putchar('\n');
-	return (0);
+	return (mult);
 }
 /**
  * main - multiply two numbers
@@ -88,6 +85,7 @@ int main(int argc, char *argv[])
 	char e[] = "Error\n";
 	char *n1;
 	char *n2;
+	int *result;
 
 	if (argc != 3 || _is_digit(argv))
 	{
@@ -100,15 +98,25 @@ int main(int argc, char *argv[])
 	while (argv[2][s2])
 		s2++;
 	n1 = malloc(sizeof(char) * (s1 + 1));
-	if (n1 == 0)
-		return (0);
 	n2 = malloc(sizeof(char) * (s2 + 1));
-	if (n2 == 0)
+	if (n1 == 0 || n2 == 0)
 		return (0);
 	for (i = 0; i <= s1; i++)
 		n1[i] = argv[1][i];
 	for (j = 0; j <= s2; j++)
 		n2[j] = argv[2][j];
-	mul(n1, n2, s1, s2, s1 + s2);
+	result = mul(n1, n2, s1, s2, s1 + s2);
+	if (result[0] == 0)
+	{
+		for (i = 1; i < s1 + s2; i++)
+			_putchar(result[i] + '0');
+	}
+	else
+	{
+		for (i = 0; i < s1 + s2; i++)
+			_putchar(result[i] + '0');
+	}
+	_putchar('\n');
+	free(result);
 	return (0);
 }
