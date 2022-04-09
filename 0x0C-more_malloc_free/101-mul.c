@@ -23,6 +23,59 @@ int _is_digit(char **n)
 }
 
 /**
+ * mul - multiplies two numbers
+ * @n1: pointer to first number
+ * @n2: pointer to second number
+ * @s1: size of n1
+ * @s2: size of n2
+ * @s: s1 + s2
+ * Return: nothing
+ */
+
+int mul(char *n1, char *n2, int s1, int s2, int s)
+{
+	int *mult;
+	int i, n, m, x, y, r = 0, r1 = 0, ms, sm = 0, a = 0;
+
+	ms = s;
+	mult = malloc(sizeof(int) * s);
+	if (mult == NULL)
+		return (0);
+	for (i = 0; i < s; i++)
+		mult[i] = 0;
+	for(n = s2 - 1; n >= 0; n--)
+	{
+		for (m = s1 - 1; m >= 0; m--)
+		{
+			x = (n2[n] - '0') * (n1[m] - '0');
+			y = x % 10;
+			if ((y + r + mult[ms - 1]) >= 10)
+			{
+				a = (y + r + mult[ms - 1]) / 10;
+				mult[ms - 1] = (y + r + r1 + mult[ms - 1]) % 10;
+				r1 = a;
+			}
+			else
+			{
+				mult[ms - 1] = y + r + r1 + mult[ms - 1];
+				r1 = 0;
+			}
+			r = x / 10;
+			if (m == 0)
+				mult[ms - 2] = r + r1;
+			ms--;
+		}
+		r = 0;
+		r1 = 0;
+		sm++;
+		ms = s - sm;
+	}
+	for (i = 0; i < s; i++)
+		_putchar(mult[i] + '0');
+	_putchar('\n');
+	return (0);
+}
+/**
  * main - multiply two numbers
  * @argc: number of arguments
  * @argv: argument vector
@@ -31,8 +84,10 @@ int _is_digit(char **n)
 
 int main(int argc, char *argv[])
 {
-	int i, s1 = 0, s2 = 0;
-	char e[] = "Error\n"
+	int i, j, s1 = 0, s2 = 0;
+	char e[] = "Error\n";
+	char *n1;
+	char *n2;
 
 	if (argc != 3 || _is_digit(argv))
 	{
@@ -44,5 +99,16 @@ int main(int argc, char *argv[])
 		s1++;
 	while (argv[2][s2])
 		s2++;
-
+	n1 = malloc(sizeof(char) * (s1 + 1));
+	if (n1 == 0)
+		return (0);
+	n2 = malloc(sizeof(char) * (s2 + 1));
+	if (n2 == 0)
+		return (0);
+	for (i = 0; i <= s1; i++)
+		n1[i] = argv[1][i];
+	for (j = 0; j <= s2; j++)
+		n2[j] = argv[2][j];
+	mul(n1, n2, s1, s2, s1 + s2);
+	return (0);
 }
