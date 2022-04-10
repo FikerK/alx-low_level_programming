@@ -118,5 +118,7 @@ int main(int argc, char *argv[])
 	}
 	_putchar('\n');
 	free(result);
+	free(n1);
+	free(n2);
 	return (0);
 }
