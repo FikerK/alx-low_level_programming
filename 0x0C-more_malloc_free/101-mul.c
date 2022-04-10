@@ -40,7 +40,10 @@ int *mul(char *n1, char *n2, int s1, int s2, int s)
 	ms = s;
 	mult = malloc(sizeof(int) * s);
 	if (mult == NULL)
+	{
+		free(mult);
 		return (0);
+	}
 	for (i = 0; i < s; i++)
 		mult[i] = 0;
 	for (n = s2 - 1; n >= 0; n--)
@@ -117,8 +120,8 @@ int main(int argc, char *argv[])
 			_putchar(result[i] + '0');
 	}
 	_putchar('\n');
-	free(result);
 	free(n1);
 	free(n2);
+	free(result);
 	return (0);
 }
