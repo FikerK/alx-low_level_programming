@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void opcodes (char *a, int s)
+void opcodes(char *a, int s)
 {
 	int i;
 
