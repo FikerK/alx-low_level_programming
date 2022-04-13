@@ -12,18 +12,11 @@ int main(int argc, char *argv[])
 {
 	int result;
 	int (*f)(int, int);
-	char *o;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
-	}
-	o = argv[2];
-	if ((strcmp(o, "/") == 0 || strcmp(o, "%") == 0) && atoi(argv[3]) == 0)
-	{
-		printf("Error\n");
-		exit(100);
 	}
 	f = get_op_func(argv[2]);
 	if (f == NULL)
