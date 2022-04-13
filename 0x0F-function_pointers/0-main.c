@@ -16,11 +16,11 @@
  *
  *      */
 
-void print_name_as_is(char *name)
+void print_name_as_is()
 
 {
-
-	    printf("Hello, my name is %s\n", name);
+	
+	printf("Hello, my name is %s\n", name);
 
 }
 
@@ -92,7 +92,7 @@ int main(void)
 
 {
 
-	    print_name("Bob", print_name_as_is);
+	    print_name("", print_name_as_is);
 
 	        print_name("Bob Dylan", print_name_uppercase);
 
