@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * list_t - adds a new node at the end of the ilst
+ * add_node_end - adds a new node at the end of the ilst
  * @head: double pointer to head
  * @str:  string to be added
  * Return: pointer to the new element
@@ -34,5 +34,5 @@ list_t *add_node_end(list_t **head, const char *str)
 	while (str[i])
 		i++;
 	new->len = i;
-	return(new);
+	return (new);
 }
