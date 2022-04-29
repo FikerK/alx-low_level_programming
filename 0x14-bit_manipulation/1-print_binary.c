@@ -2,14 +2,14 @@
 
 /**
  * print_binary - binary representation of a number
- * n: number to be converted
+ * @n: number to be converted
  *
  * Return: void
  */
 void print_binary(unsigned long int n)
 {
 	unsigned long int temp;
-	int i = 0;
+	int i;
 
 	if (n == 0)
 	{
@@ -17,7 +17,8 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	temp = n;
-	while ((temp >>=1) > 0)
+	i = 0;
+	while ((temp >>= 1) > 0)
 		i++;
 	while (i >= 0)
 	{
