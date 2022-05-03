@@ -18,10 +18,12 @@ int create_file(const char *filename, char *text_content)
 	f = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (f == -1)
 		return (-1);
-	for (i = 0; text_content[i]; i++)
-		;
 	if (text_content != NULL)
+	{
+		for (i = 0; text_content[i]; i++)
+			;
 		len = write(f, text_content, i);
+	}
 	close(f);
 	if (len == -1)
 		return (-1);
