@@ -3,8 +3,8 @@
 
 /**
  * add_dnodeint_end - adds a new node at the end of a dlistint_t list
- * @head: 
- * @n
+ * @head: pointer to the head
+ * @n: added int
  *
  * Return: the address of the new element, or NULL if it failed
  */
